@@ -1,0 +1,28 @@
+<!--
+<section id="todos">
+  <header>
+  <h2> Editing  '<%=session[:lists][@num][:name]%>' </h2>
+    <ul >
+      <li>
+        <form action="/lists/<%=@num%>/delete" method="post">
+          <button type="submit" class="delete">Delete List</button>
+    </ul>
+  </header>
+</section>
+!/>
+-->
+
+<form action="/lists/<%=@num%>" method="post">
+  <dl>
+    <dt>
+      <label for="new_list_name">Enter the new name for your list:</label>
+    </dt>
+    <dd>
+      <input name="new_list_name" placeholder="New List Name" type="text" value="<%= session[:lists][@num][:name]||params[:new_list_name]%>">
+    </dd>
+  </dl>
+  <fieldset class="actions">
+    <input type="submit" value="Save">
+    <a href="/lists/<%=@num%>">Cancel</a>
+  </fieldset>
+</form>
