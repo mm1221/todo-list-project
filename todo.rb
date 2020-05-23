@@ -6,6 +6,7 @@ require "sinatra/content_for"
 configure do 
   enable :sessions
   set :session_secret, 'secret'
+  set :erb, :escape_html => true
 end
 
 helpers do 
@@ -18,7 +19,7 @@ helpers do
   end
 
   def todos_remaining_count(list)
-    list[:todos].count {|todo| todo[:completed] == false}
+    list[:todos].count {|todo| todo[:completed] == "false"}
   end
 
   def todos_count(list)
