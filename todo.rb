@@ -105,6 +105,12 @@ end
 # Display a single list
 get "/lists/:number" do 
   @num = params[:number].to_i
+
+  if @num > @lists.to_i 
+    session[:error] = "The specified list was not found"
+    redirect "/lists"
+  end
+
   @this_list = session[:lists][@num]
   erb :temp_list_display, layout: :layout
 end
