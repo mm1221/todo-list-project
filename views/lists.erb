@@ -15,7 +15,7 @@
       <a>
         <h2><a href="/lists/<%= @lists.index(list) %>"> <%= list[:name] %></a> </h2>
         <p>
-          <%= str = 'P' %> / <%= todos_count(list) %>
+          <%= todos_remaining_count(list) %> / <%= todos_count(list) %>
         </p>
       </a>
     </li>
