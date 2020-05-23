@@ -19,7 +19,7 @@ helpers do
   end
 
   def todos_remaining_count(list)
-    list[:todos].count {|todo| todo[:completed] == "false"}
+    list[:todos].count {|todo| todo[:completed] == "true"}
   end
 
   def todos_count(list)
